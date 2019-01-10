@@ -10,9 +10,11 @@ namespace MSC_CustomListClass
     {
 
         T[] items = new T[0];
-        private int _count;
-        //Count for the Arrays current size
-       public int Count { get => _count; set => _count = value; }
+         int _count;
+        
+
+        //Count for the Array 
+        public int Count { get => _count; set => _count = value; }
         //Idexer declaration 
         public T this[int index] { get => items[index]; set => items[index] = value; }
         public void Add(T item)
@@ -21,6 +23,10 @@ namespace MSC_CustomListClass
             Array.Resize(ref items, Count);
             items[items.Length - 1] = item;  
         }
+        public bool Remove(T item)
+        {
+            return items.Contains(item);
 
+        }
     }
 }
