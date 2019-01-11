@@ -40,10 +40,21 @@ namespace MSC_CustomListClass
             }
             return ReturnList;
         }
+        public static CustomList<T> operator -(CustomList<T> ListOne, CustomList<T> ListTwo)
+        {
+            /*parse ListOne if ListTwo Contains any index of ListOne 
+               remove it from ListOne 
+            */
+
+            CustomList<T> ReturnList = new CustomList<T>();
+
+            return ReturnList;
+        }
         // TODO: Increase efficiency
         public bool Remove(T item)
         {
-            if (items.Contains(item) == true)
+            
+            if (Contains(item) == true)
             {
                 int index = IsValueInIndex(item);
                 for (int i = index; i < items.Length - 1; i++)
@@ -52,7 +63,7 @@ namespace MSC_CustomListClass
                 }
                
             }
-            return items.Contains(item);
+            return Contains(item);
         }
         //Resize a array only when the count == capacity
         public void Resize()
@@ -91,6 +102,17 @@ namespace MSC_CustomListClass
                 }
             }
             return 0;
+        }
+        public  bool Contains(T item)
+        {
+            for (int i = 0; i < items.Length; i++)
+            {
+                if (items[i].Equals(item))
+                {
+                    return true;
+                }
+            }
+            return false;
         }
         
     }
