@@ -19,11 +19,28 @@ namespace MSC_CustomListClass
         //Idexer declaration 
         public T this[int index] { get => items[index]; set => items[index] = value; }
 
-        public void Add(T item)
+        public  void Add(T item)
         {
             _count += 1;
             Resize();
             items[_count- 1] = item;
+        }
+        public void Add(CustomList<T> ListOne, CustomList<T> ListTwo)
+        {
+            CustomList<T> ReturnList = new CustomList<T>();
+            _count = ListOne.Count + ListTwo.Count;
+            Resize();
+            int i = 0;
+            for (; i < ListOne.Count; i++)
+            {
+                ReturnList.Add(ListOne[i]);
+
+            }
+            for (int j = 0; j < ListTwo.Count; j++)
+            {
+                ReturnList.Add(ListTwo[j]);
+            }
+           
         }
         // TODO: Increase efficiency
         public bool Remove(T item)
@@ -47,7 +64,7 @@ namespace MSC_CustomListClass
             {
                 Capacity = 4;
             }
-            if (Count == Capacity)
+            if (Count >= Capacity)
             {
                 Capacity *= Capacity;
                 T[] n_items = new T[Capacity];

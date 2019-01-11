@@ -102,7 +102,7 @@ namespace ListTest
             Assert.AreEqual(expetedResult, actual);
         }
         [TestMethod]
-        public void Remove_OneString_ListSize4()
+        public void Remove_OneString_ListContainsMorethanone()
         {
             CustomList<string> customList = new CustomList<string>();
             //Arrange
