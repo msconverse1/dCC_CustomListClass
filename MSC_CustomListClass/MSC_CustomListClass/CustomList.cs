@@ -25,22 +25,20 @@ namespace MSC_CustomListClass
             Resize();
             items[_count- 1] = item;
         }
-        public void Add(CustomList<T> ListOne, CustomList<T> ListTwo)
+        public static CustomList<T> operator + (CustomList<T> ListOne, CustomList<T> ListTwo)
         {
             CustomList<T> ReturnList = new CustomList<T>();
-            _count = ListOne.Count + ListTwo.Count;
-            Resize();
+            
             int i = 0;
             for (; i < ListOne.Count; i++)
             {
                 ReturnList.Add(ListOne[i]);
-
             }
             for (int j = 0; j < ListTwo.Count; j++)
             {
                 ReturnList.Add(ListTwo[j]);
             }
-           
+            return ReturnList;
         }
         // TODO: Increase efficiency
         public bool Remove(T item)
@@ -52,10 +50,9 @@ namespace MSC_CustomListClass
                 {
                     items[i] = items[i + 1];
                 }
-                Array.Resize(ref items, items.Length - 1);
+               
             }
             return items.Contains(item);
-
         }
         //Resize a array only when the count == capacity
         public void Resize()
@@ -66,7 +63,7 @@ namespace MSC_CustomListClass
             }
             if (Count >= Capacity)
             {
-                Capacity *= Capacity;
+                Capacity *= 2;
                 T[] n_items = new T[Capacity];
                 for (int i = 0; i < items.Length; i++)
                 {
@@ -92,9 +89,9 @@ namespace MSC_CustomListClass
                 {
                     return i;
                 }
-               
             }
             return 0;
         }
+        
     }
 }

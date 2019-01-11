@@ -30,8 +30,8 @@ namespace ListTest
             intList2.Add(expectedResult4);
             intList2.Add(expectedResult5);
             intList2.Add(expectedResult6);
-
-            intList3.Add(intList, intList2);
+            intList3 =intList + intList2;
+           // intList3.Add(intList, intList2);
             
             //Assert
             Assert.AreEqual(expectedSize, intList3.Count);
@@ -60,13 +60,14 @@ namespace ListTest
             intList2.Add(expectedResult4);
             intList2.Add(expectedResult5);
             intList2.Add(expectedResult6);
-            
-            intList3.Add(intList, intList2);
+            intList3 = intList + intList2;
+            //intList3.Add(intList, intList2);
             intList4.Add(expectedResult);
             intList4.Add(expectedResult2);
             intList4.Add(expectedResult4);
             intList4.Add(expectedResult5);
-            intList4.Add(intList4,intList3);
+            // intList4.Add(intList4,intList3);
+            intList4 = intList4 + intList3;
             //Assert
             Assert.AreEqual(expectedSize, intList4.Count);
         }
@@ -93,13 +94,14 @@ namespace ListTest
             intList2.Add(expectedResult4);
             intList2.Add(expectedResult5);
             intList2.Add(expectedResult6);
-
-            intList3.Add(intList, intList2);
+            intList3 = intList + intList2;
+            //  intList3.Add(intList, intList2);
             intList4.Add(expectedResult);
             intList4.Add(expectedResult2);
             intList4.Add(expectedResult4);
             intList4.Add(expectedResult5);
-            intList4.Add(intList4, intList3);
+            //  intList4.Add(intList4, intList3);
+            intList4 = intList4 + intList3;
             intList4.Add(expectedResult3);
             //Assert
             Assert.AreEqual(expectedSize, intList4.Count);
@@ -127,13 +129,14 @@ namespace ListTest
             intList2.Add(expectedResult4);
             intList2.Add(expectedResult5);
             intList2.Add(expectedResult6);
-
-            intList3.Add(intList, intList2);
+            intList3 = intList + intList2;
+            //  intList3.Add(intList, intList2);
             intList4.Add(expectedResult);
             intList4.Add(expectedResult2);
             intList4.Add(expectedResult4);
             intList4.Add(expectedResult5);
-            intList4.Add(intList4, intList3);
+            intList4 = intList4 + intList3;
+            //  intList4.Add(intList4, intList3);
             intList4.Add(expectedResult3);
             //Assert
             Assert.AreEqual(expectedSize, intList4.Count);

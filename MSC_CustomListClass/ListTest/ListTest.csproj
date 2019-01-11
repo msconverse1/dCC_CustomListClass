@@ -53,6 +53,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RemoveTest.cs" />
     <Compile Include="+OperatorOverload.cs" />
+    <Compile Include="-OperatorOverload.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
