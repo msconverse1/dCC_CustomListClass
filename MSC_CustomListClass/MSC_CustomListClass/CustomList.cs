@@ -13,8 +13,8 @@ namespace MSC_CustomListClass
         int _count;
         private int _capacity;
 
-        //Count for the Array 
-        public int Count { get => _count; set => _count = value; }
+        //Count for the Array  is read only
+       public int Count { get => _count; }
         private int Capacity { get => _capacity; set => _capacity = value; }
         //Idexer declaration 
         public T this[int index] { get => items[index]; set => items[index] = value; }
@@ -33,6 +33,7 @@ namespace MSC_CustomListClass
             for (; i < ListOne.Count; i++)
             {
                 ReturnList.Add(ListOne[i]);
+                
             }
             for (int j = 0; j < ListTwo.Count; j++)
             {
@@ -45,25 +46,31 @@ namespace MSC_CustomListClass
             /*parse ListOne if ListTwo Contains any index of ListOne 
                remove it from ListOne 
             */
-
             CustomList<T> ReturnList = new CustomList<T>();
-
+            for (int i = 0; i < ListOne.Count; i++)
+            {
+                ReturnList.Add(ListOne[i]);
+            }
+            for (int i = 0; i < ReturnList.Count; i++)
+            {
+                ReturnList.Remove(ListTwo[i]);
+            }
             return ReturnList;
         }
         // TODO: Increase efficiency
         public bool Remove(T item)
         {
-            
-            if (Contains(item) == true)
+            bool doesExist = Contains(item);
+            if (doesExist)
             {
                 int index = IsValueInIndex(item);
                 for (int i = index; i < items.Length - 1; i++)
                 {
                     items[i] = items[i + 1];
                 }
-               
+                _count -= 1;
             }
-            return Contains(item);
+            return doesExist;
         }
         //Resize a array only when the count == capacity
         public void Resize()
