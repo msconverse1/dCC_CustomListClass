@@ -34,6 +34,23 @@ namespace ListTest
             Assert.AreEqual(expectedResult, intList[0]);
         }
         [TestMethod]
+        public void Add_TwoIntsToList_ResizeArray()
+        {
+            //Arrange
+            CustomList<int> intList = new CustomList<int>();
+            int expectedResult = 5;
+            int expectedResult1 = 7;
+            //Act
+            intList.Add(expectedResult);
+            intList.Add(expectedResult1);
+            intList.Add(expectedResult);
+            intList.Add(expectedResult1);
+            intList.Add(expectedResult);
+            intList.Add(expectedResult1);
+            //Assert
+            Assert.AreEqual(expectedResult, intList[0]);
+        }
+        [TestMethod]
         public void Add_TwoIntsToList_ReturnResultAtIndexOne()
         {
             //Arrange

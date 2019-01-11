@@ -14,7 +14,7 @@ namespace ListTest
             //Arrange
             
             int expectedInt = 5;
-            bool expetedResult = true;
+            bool  expetedResult = false;
             //Act
             customList.Add(expectedInt);
           bool actual =  customList.Remove(expectedInt);
@@ -32,7 +32,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = true;
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedInt1);
@@ -42,6 +42,7 @@ namespace ListTest
 
             //Assert
             Assert.AreEqual(expetedResult, actual);
+            
         }
         public void Remove_SingleInt_ReturnListWhenNoFound()
         {
@@ -52,7 +53,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = true;
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedInt1);
@@ -63,7 +64,7 @@ namespace ListTest
             //Assert
             Assert.AreEqual(expetedResult, actual);
         }
-        public void Remove_FirstIntFromListContainMultiSame_ReturnsList()
+        public void Remove_FirstOccurrenceFromListContainMultiSame_ReturnsList()
         {
             CustomList<int> customList = new CustomList<int>();
             //Arrange
@@ -72,7 +73,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = true;
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedInt);
@@ -91,7 +92,7 @@ namespace ListTest
             //Arrange
 
             string expectedInt = "Hello";
-            bool expetedResult = true;
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedInt);
@@ -110,14 +111,15 @@ namespace ListTest
             string expectedString1 = "Matthew";
             string expectedString2 = "Hello";
             string expectedString3 = "Test";
-
-            bool expetedResult = true;
+            string expectedString4 = "Hello";
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedString);
             customList.Add(expectedString1);
             customList.Add(expectedString2);
             customList.Add(expectedString3);
+            customList.Add(expectedString4);
 
             bool actual = customList.Remove(expectedString2);
 
@@ -131,7 +133,7 @@ namespace ListTest
             //Arrange
 
             bool expectedInt = true;
-            bool expetedResult = true;
+            bool expetedResult = false;
 
             //Act
             customList.Add(expectedInt);
