@@ -22,6 +22,21 @@ namespace ListTest
             //Assert
             Assert.AreEqual(expected, convertedList);
         }
+        [TestMethod]
+        public void Convert_ListOfstrings_ReturnString()
+        {
+            //Arrange
+            CustomList<string> customList = new CustomList<string>();
+            customList.Add("1");
+            customList.Add("2");
+            customList.Add("3");
+            string convertedList;
+            string expected = "1,2,3,";
+            //Act
+            convertedList = customList.ToString();
 
+            //Assert
+            Assert.AreEqual(expected, convertedList);
+        }
     }
 }
