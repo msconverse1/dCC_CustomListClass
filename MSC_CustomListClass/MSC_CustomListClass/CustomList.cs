@@ -124,7 +124,20 @@ namespace MSC_CustomListClass
             }
             return false;
         }
-        
 
+        public CustomList<T> Zip(CustomList<T> ListOne, CustomList<T> ListTwo)
+        {
+            CustomList<T> ListThree = new CustomList<T>();
+            if (ListOne[0] != null && ListTwo[0] != null)
+            {
+                for (int i = 0; i < ListOne.Count; i++)
+                {
+                    ListThree.Add(ListOne[i]);
+                    ListThree.Add(ListTwo[i]);
+                }
+                return ListThree;
+            }
+            return ListThree;
+        }
     }
 }
