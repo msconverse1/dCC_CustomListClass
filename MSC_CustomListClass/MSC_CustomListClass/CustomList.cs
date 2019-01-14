@@ -1,12 +1,13 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace MSC_CustomListClass
+namespace MSC_CustomListClass 
 {
-    public class CustomList<T>
+    public class CustomList<T> : IEnumerable
     {
 
         T[] items = new T[0];
@@ -127,8 +128,9 @@ namespace MSC_CustomListClass
 
         public CustomList<T> Zip(CustomList<T> ListOne, CustomList<T> ListTwo)
         {
+            
             CustomList<T> ListThree = new CustomList<T>();
-            if (ListOne[0] != null && ListTwo[0] != null)
+            if (ListOne.Count != 0)
             {
                 for (int i = 0; i < ListOne.Count; i++)
                 {
@@ -149,6 +151,48 @@ namespace MSC_CustomListClass
             }
 
             return newstring;
+        }
+        public  void Sort(CustomList<int> customList)
+        {
+
+                for (int i = 0; i < customList.Count; i++)
+                {
+                    int key = customList[i];
+                    int j = i - 1;
+                    while (j>=0 && customList[j]>key)
+                    {
+                     customList[j + 1] = customList[j];
+                     j= j - 1;
+                    }
+                customList[j + 1] = key;
+                }
+            
+        }
+        public  void Sort(CustomList<string> customList)
+        {
+            string temp;
+            for (int i = 0; i < customList.Count; i++)
+            {
+                for (int j = 0; j < customList.Count; j++)
+                {
+                    if (string.Compare(customList[i],customList[j])<0)
+                    {
+                        temp = customList[i];
+                        customList[i] = customList[j];
+                        customList[j] = temp;
+                    }
+                }
+            }
+        }
+
+
+        public IEnumerator GetEnumerator()
+        {
+            for (int i = 0; i < items.Length - 1; i++)
+            {
+                yield return items[i];
+            }
+            yield return "No More Items";
         }
     }
 }

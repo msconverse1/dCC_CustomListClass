@@ -83,18 +83,7 @@ namespace ListTest
             CustomList<int> customList2 = new CustomList<int>();
             CustomList<int> customList3 = new CustomList<int>();
             CustomList<int> customList4 = new CustomList<int>();
-            
-            customList[1]=(3);
-            customList[2]=(5);
-            
-            customList2[1]=(4);
-            customList2[2]=(6);
-            customList4.Add(1);
-            customList4.Add(2);
-            customList4.Add(3);
-            customList4.Add(4);
-            customList4.Add(5);
-            customList4.Add(6);
+
 
             //Act
             customList3 = customList3.Zip(customList, customList2);
@@ -160,8 +149,6 @@ namespace ListTest
             customList4.Add(3);
             customList4.Add(5);
             customList4.Add(8);
-
-
 
             //Act
             customList3 = customList3.Zip(customList, customList2);

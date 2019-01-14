@@ -1,0 +1,64 @@
+   -Operator
+	syntax:
+	  CustomList<T> operator -(CustomList<T> ListOne,CustomList<T> ListTwo);
+	  
+	parameters:
+		 intList3 = intList - intList2;
+	return type:
+		
+		CustomList<T> ReturnList;
+
+	Example:
+	
+	public void operatorminus()
+	{
+	    //Arrange
+            CustomList<int> intList = new CustomList<int>();
+            CustomList<int> intList2 = new CustomList<int>();
+            CustomList<int> intList3 = new CustomList<int>();
+            int expectedSize = 2;
+            int expectedResult   = 1;
+            int expectedResult2 = 3;
+            int expectedResult3 = 5;
+
+            int expectedResult4 = 2;
+            int expectedResult5 = 1;
+            int expectedResult6 = 6;
+            //Act
+            intList.Add(expectedResult);
+            intList.Add(expectedResult2);
+            intList.Add(expectedResult3);
+
+            intList2.Add(expectedResult4);
+            intList2.Add(expectedResult5);
+            intList2.Add(expectedResult6);
+
+            intList3 = intList - intList2;
+
+            //Assert
+            Assert.AreEqual(expectedSize, intList3.Count);
+	}
+
+	 public static CustomList<T> operator -(CustomList<T> ListOne, CustomList<T> ListTwo)
+        {
+            /*parse ListOne if ListTwo Contains any index of ListOne 
+               remove it from ListOne 
+            */
+
+            CustomList<T> ReturnList = new CustomList<T>();
+
+            for (int i = 0; i < ListOne.Count; i++)
+            {
+                ReturnList.Add(ListOne[i]);
+            }
+            for (int i = 0; i < ReturnList.Count; i++)
+            {
+                ReturnList.Remove(ListTwo[i]);
+            }
+            return ReturnList;
+        }
+
+         /*
+	Output:
+	3,5	
+	*/
