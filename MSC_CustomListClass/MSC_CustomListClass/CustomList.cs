@@ -46,7 +46,9 @@ namespace MSC_CustomListClass
             /*parse ListOne if ListTwo Contains any index of ListOne 
                remove it from ListOne 
             */
+
             CustomList<T> ReturnList = new CustomList<T>();
+
             for (int i = 0; i < ListOne.Count; i++)
             {
                 ReturnList.Add(ListOne[i]);
@@ -112,6 +114,7 @@ namespace MSC_CustomListClass
         }
         public  bool Contains(T item)
         {
+  
             for (int i = 0; i < items.Length; i++)
             {
                 if (items[i].Equals(item))
@@ -122,5 +125,6 @@ namespace MSC_CustomListClass
             return false;
         }
         
+
     }
 }
