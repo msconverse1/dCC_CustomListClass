@@ -115,7 +115,7 @@ namespace MSC_CustomListClass
         public  bool Contains(T item)
         {
   
-            for (int i = 0; i < items.Length; i++)
+            for (int i = 0; i < items.Length-1; i++)
             {
                 if (items[i].Equals(item))
                 {

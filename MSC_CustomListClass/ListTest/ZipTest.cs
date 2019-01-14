@@ -105,7 +105,7 @@ namespace ListTest
             }
         }
         [TestMethod]
-        public void AddTwoList_3Indexs_ReturnNewList()
+        public void AddTwoList_Addnewdata_ReturnNewList()
         {
             //Arrange
             CustomList<int> customList = new CustomList<int>();
@@ -124,10 +124,10 @@ namespace ListTest
             customList4.Add(4);
             customList4.Add(5);
             customList4.Add(6);
-
+            customList4.Add(8);
             //Act
             customList3 = customList3.Zip(customList, customList2);
-
+            customList3.Add(8);
             //Assert
             for (int i = 0; i < customList4.Count; i++)
             {

@@ -14,7 +14,7 @@ namespace ListTest
             //Arrange
             
             int expectedInt = 5;
-            bool  expetedResult = false;
+            bool  expetedResult = true;
             //Act
             customList.Add(expectedInt);
           bool actual =  customList.Remove(expectedInt);
@@ -32,7 +32,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = false;
+            bool expetedResult = true;
 
             //Act
             customList.Add(expectedInt1);
@@ -53,7 +53,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = false;
+            bool expetedResult = true;
 
             //Act
             customList.Add(expectedInt1);
@@ -73,7 +73,7 @@ namespace ListTest
             int expectedInt1 = 0;
             int expectedInt2 = 2;
 
-            bool expetedResult = false;
+            bool expetedResult = true;
 
             //Act
             customList.Add(expectedInt);
@@ -92,7 +92,7 @@ namespace ListTest
             //Arrange
 
             string expectedInt = "Hello";
-            bool expetedResult = false;
+            bool expetedResult = true;
 
             //Act
             customList.Add(expectedInt);
@@ -133,7 +133,7 @@ namespace ListTest
             //Arrange
 
             bool expectedInt = true;
-            bool expetedResult = false;
+            bool expetedResult = true;
 
             //Act
             customList.Add(expectedInt);
