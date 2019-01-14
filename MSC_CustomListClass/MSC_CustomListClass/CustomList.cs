@@ -139,5 +139,16 @@ namespace MSC_CustomListClass
             }
             return ListThree;
         }
+        public override string ToString()
+        {
+            string newstring = "";
+            for (int i = 0; i < Count; i++)
+            {
+                newstring += items[i];
+                newstring += ",";
+            }
+
+            return newstring;
+        }
     }
 }
