@@ -74,6 +74,7 @@ namespace ListTest
                 Assert.AreEqual(customList4[i], customList3[i]);
             }
         }
+        //Should Always Fail!!!
         [TestMethod]
         public void AddTwoList_Index0Null_ReturnNewList()
         {
@@ -101,6 +102,7 @@ namespace ListTest
             //Assert
             for (int i = 0; i < customList4.Count; i++)
             {
+
                 Assert.AreEqual(customList4[i], customList3[i]);
             }
         }
@@ -125,6 +127,8 @@ namespace ListTest
             customList4.Add(5);
             customList4.Add(6);
             customList4.Add(8);
+            //
+
             //Act
             customList3 = customList3.Zip(customList, customList2);
             customList3.Add(8);
@@ -132,6 +136,41 @@ namespace ListTest
             for (int i = 0; i < customList4.Count; i++)
             {
                 Assert.AreEqual(customList4[i], customList3[i]);
+            }
+        }
+        [TestMethod]
+        public void AddTwoList_OperatorMinus_ReturnNewList()
+        {
+            //Arrange
+            CustomList<int> customList = new CustomList<int>();
+            CustomList<int> customList2 = new CustomList<int>();
+            CustomList<int> customList3 = new CustomList<int>();
+            CustomList<int> customList4 = new CustomList<int>();
+            CustomList<int> customListMinus = new CustomList<int>();
+
+            customList.Add(1);
+            customList.Add(3);
+            customList.Add(5);
+
+            customList2.Add(2);
+            customList2.Add(4);
+            customList2.Add(6);
+
+            customList4.Add(1);
+            customList4.Add(3);
+            customList4.Add(5);
+            customList4.Add(8);
+
+
+
+            //Act
+            customList3 = customList3.Zip(customList, customList2);
+            customList3.Add(8);
+            customListMinus = customList3 - customList2;
+            //Assert
+            for (int i = 0; i < customList4.Count; i++)
+            {
+                Assert.AreEqual(customList4[i], customListMinus[i]);
             }
         }
 
