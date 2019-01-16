@@ -7,15 +7,14 @@ using System.Threading.Tasks;
 
 namespace MSC_CustomListClass 
 {
-    public class CustomList<T> : IEnumerable
+    public class CustomList<T> : BaseList
     {
 
         T[] items = new T[0];
-        int _count;
-        private int _capacity;
 
+        int _count;
         //Count for the Array  is read only
-       public int Count { get => _count; }
+        public int Count { get => _count; }
         private int Capacity { get => _capacity; set => _capacity = value; }
         //Idexer declaration 
         public T this[int index] { get => items[index]; set => items[index] = value; }
@@ -186,7 +185,7 @@ namespace MSC_CustomListClass
         }
 
 
-        public IEnumerator GetEnumerator()
+        public override IEnumerator GetEnumerator()
         {
             for (int i = 0; i < items.Length - 1; i++)
             {
